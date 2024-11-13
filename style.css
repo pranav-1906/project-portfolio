@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #ededed;
+    color: #0f0d0d;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: rgb(237, 237, 237, 0.4);
+    backdrop-filter: blur( 9px );
+    -webkit-backdrop-filter: blur( 9px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 25px;
+    color: #006179;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.logo:hover{
+    font-weight: 900;
+}
+
+.navbar a{
+    font-size: 18px;
+    color: #00abf0;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: 0.3s;
+}
+
+.navbar a:hover{
+    color: #f06c9b;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 0 10%;
+}
+
+.home-content{
+    max-width: 600px;
+}
+.home-content h1{
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #006179;
+}
+
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0;
+}
+
+.home-content p{
+    font-size: 16px;
+    font-weight: 450;
+    margin: 20px 0 40px;
+    color: #006179;
+}
+
+.home-content .btn-box{
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+
+.btn-box a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #f06c9b;
+    border: 2px solid #f06c9b;
+    border-radius: 20px;
+    font-size: 19px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn-box a:hover{
+    color: #f06c9b;
+    scale: 1.05;
+}
+
+.btn-box a:nth-child(2){
+    background-color: transparent;
+    color: #f06c9b;
+}
+
+.btn-box a:nth-child(2):hover{
+    color: #ededed;
+}
+
+.btn-box a:nth-child(2)::before{
+    background: #f06c9b;
+}
+
+.btn-box a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ededed;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box a:hover::before{
+    width: 100%;
+}
+
+.home-soi{
+    position: absolute;
+    bottom: 80px;
+    width: 230px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-soi a{
+    display: inline-flex;
+    width: 60px;
+    height: 60px;
+    background: #f06c9b;
+    border: 2px solid #f06c9b;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #ededed;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.home-soi a:hover{
+    background: #ededed;
+    scale: 1.08;
+    color: #f06c9b;
+}
+
+.about{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 0 10%;
+}
+
+.about-content h2{
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    color: #00abf0;
+}
+
+.about-content p{
+    text-align: center;
+    color: #006179;
+    font-size: 26px;
+    font-weight: 450;
+    margin: 20px 0 40px;
+}
+
+.skills-content h2{
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    color: #00abf0;
+}
+
+.skillsbox div{
+    display: flex;
+    height: 220px;
+    width: 2000px;
+    margin: 20px;
+    border-radius: 10px;
+    flex-grow: 1;
+    flex-basis: 300px;
+    min-width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.skillsbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skillsbox i{
+    font-size: 120px;
+    color: #006179;
+}
+
+.skillsbox h1{
+    font-size: 120px;
+    color: #006179;
+}
+
+.skillsbox p{
+    font-size: 30px;
+    font-weight: 500;
+    color: #006179;
+}
+
+.skillsbox .prog{
+    position: relative;
+    right: 90px;
+    top: 50px;
+    scale: 1.3;
+}
