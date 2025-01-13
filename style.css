@@ -8,8 +8,8 @@
 }
 
 body{
-    background: #ededed;
-    color: #0f0d0d;
+    background: #081b29;
+    color: #ededed;
 }
 
 .header{
@@ -18,11 +18,7 @@ body{
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: rgb(237, 237, 237, 0.4);
-    backdrop-filter: blur( 9px );
-    -webkit-backdrop-filter: blur( 9px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,19 +27,22 @@ body{
 
 .logo{
     font-size: 25px;
-    color: #006179;
+    color: #ededed;
     text-decoration: none;
     font-weight: 600;
     transition: .5s;
 }
 
 .logo:hover{
-    font-weight: 900;
+    text-shadow: 0 0 5px #00b7ff,
+                0 0 10px #00b7ff,
+                0 0 20px #00b7ff,
+                0 0 50px #00b7ff;;
 }
 
 .navbar a{
     font-size: 18px;
-    color: #00abf0;
+    color: #ededed;
     text-decoration: none;
     font-weight: 500;
     margin-left: 35px;
@@ -51,7 +50,9 @@ body{
 }
 
 .navbar a:hover{
-    color: #f06c9b;
+    text-shadow: 0 0 5px #00b7ff,
+                0 0 10px #00b7ff,
+                0 0 20px #00b7ff;
 }
 
 .home{
@@ -68,7 +69,6 @@ body{
     font-size: 56px;
     font-weight: 700;
     line-height: 1.2;
-    color: #006179;
 }
 
 .home-content h3{
@@ -79,9 +79,7 @@ body{
 
 .home-content p{
     font-size: 16px;
-    font-weight: 450;
     margin: 20px 0 40px;
-    color: #006179;
 }
 
 .home-content .btn-box{
@@ -98,11 +96,11 @@ body{
     align-items: center;
     width: 150px;
     height: 100%;
-    background: #f06c9b;
-    border: 2px solid #f06c9b;
+    background: #00abf0;
+    border: 2px solid #00abf0;
     border-radius: 20px;
     font-size: 19px;
-    color: #ededed;
+    color: #081b29;
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 1px;
@@ -112,21 +110,24 @@ body{
 }
 
 .btn-box a:hover{
-    color: #f06c9b;
-    scale: 1.05;
+    color: #00abf0;
+    box-shadow: 0 0 5px #00b7ff,
+                0 0 10px #00b7ff,
+                0 0 20px #00b7ff,
+                0 0 50px #00b7ff;
 }
 
 .btn-box a:nth-child(2){
     background-color: transparent;
-    color: #f06c9b;
+    color: #00abf0;
 }
 
 .btn-box a:nth-child(2):hover{
-    color: #ededed;
+    color: #00abf0;
 }
 
 .btn-box a:nth-child(2)::before{
-    background: #f06c9b;
+    background: #ededed;
 }
 
 .btn-box a::before{
@@ -147,7 +148,7 @@ body{
 
 .home-soi{
     position: absolute;
-    bottom: 80px;
+    margin-top: 400px;
     width: 230px;
     display: flex;
     justify-content: space-between;
@@ -157,11 +158,11 @@ body{
     display: inline-flex;
     width: 60px;
     height: 60px;
-    background: #f06c9b;
-    border: 2px solid #f06c9b;
+    background: transparent;
+    border: 2px solid #00abf0;
     border-radius: 50%;
     font-size: 20px;
-    color: #ededed;
+    color: #00abf0;
     text-decoration: none;
     justify-content: center;
     align-items: center;
@@ -170,78 +171,46 @@ body{
 
 .home-soi a:hover{
     background: #ededed;
-    scale: 1.08;
-    color: #f06c9b;
+    box-shadow: 0 0 5px #00b7ff,
+                0 0 10px #00b7ff,
+                0 0 20px #00b7ff,
+                0 0 50px #00b7ff;
 }
 
-.about{
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    padding: 0 10%;
+.imgabs{
+    width: 700px;
+    position:fixed;
+    margin-left: 600px;
 }
 
-.about-content h2{
-    text-align: center;
-    font-size: 42px;
-    font-weight: 700;
-    color: #00abf0;
-}
+@media (max-width: 523px){
+    .home-content h1{
+        font-size:40px;
+    }
 
-.about-content p{
-    text-align: center;
-    color: #006179;
-    font-size: 26px;
-    font-weight: 450;
-    margin: 20px 0 40px;
-}
+    .home-content h3{
+        font-size: 20px;
+    }
+    .home-content p{
+        font-size: 13px;
+        padding-right: 40px;
+    }
 
-.skills-content h2{
-    text-align: center;
-    font-size: 42px;
-    font-weight: 700;
-    color: #00abf0;
-}
+    .btn-box{
+        width: 10px;
+        height: 500%;
+        font-size: 10px;
+        padding-right: 30px;
+    }
 
-.skillsbox div{
-    display: flex;
-    height: 220px;
-    width: 2000px;
-    margin: 20px;
-    border-radius: 10px;
-    flex-grow: 1;
-    flex-basis: 300px;
-    min-width: 300px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-    align-items: center;
-    padding-left: 20px;
-}
+    .home-soi{
+        padding-bottom: 50px;
+        display: flex;
+        justify-content: space-around;
+    }
 
-.skillsbox {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.skillsbox i{
-    font-size: 120px;
-    color: #006179;
-}
-
-.skillsbox h1{
-    font-size: 120px;
-    color: #006179;
-}
-
-.skillsbox p{
-    font-size: 30px;
-    font-weight: 500;
-    color: #006179;
-}
-
-.skillsbox .prog{
-    position: relative;
-    right: 90px;
-    top: 50px;
-    scale: 1.3;
+    .home-soi a{
+        width: 50px;
+        height: 50px;
+    }
 }
