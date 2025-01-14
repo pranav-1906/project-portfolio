@@ -148,7 +148,7 @@ body{
 
 .home-soi{
     position: absolute;
-    margin-top: 400px;
+    margin-top: 480px;
     width: 230px;
     display: flex;
     justify-content: space-between;
@@ -179,13 +179,134 @@ body{
 
 .imgabs{
     width: 700px;
-    position:fixed;
-    margin-left: 600px;
+    position: static;
+    margin-left: 300px;
+}
+
+.skillpg h3{
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    transition: .5s;
+}
+
+.skillpg h3:hover{
+    text-shadow: 0 0 5px #00b7ff,
+                0 0 10px #00b7ff,
+                0 0 20px #00b7ff,
+                0 0 50px #00b7ff;;
+}
+
+.skillbox div img{
+    width: 26%;
+}
+
+.skillbox{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    grid-gap: 30px 40px;
+    margin: 50px 0px 0px 110px;
+    padding-bottom: 150px;
+}
+
+.skillcol{
+    background-color: #ededed;
+    color: #00abf0;
+}
+
+.skillcolo{
+    background-color: #00abf0;
+}
+
+.skillbox div{
+    display: flex;
+    padding: 10px;
+    width: 400px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.skillbox div h5{
+    padding-left: 10px;
+    padding-top: 35px;
+    font-size: 19px;
+    
+}
+
+.projectspg{
+    margin-bottom: 100px;
+}
+
+.projectspg h3{
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    transition: .5s;
+}
+
+.projectspg h3:hover{
+    text-shadow: 0 0 5px #00b7ff,
+                0 0 10px #00b7ff,
+                0 0 20px #00b7ff,
+                0 0 50px #00b7ff;;
+}
+
+.projectsbox div{
+    display: block;
+    border-radius: 35px;
+    width: 1000px;
+    padding: 20px 30px 20px 30px;
+    margin: 0px 0px 40px 70px;
+}
+
+.projectsbox div h4{
+    font-size: 20px;
+}
+
+.projectsbox div a{
+    color: lightblue;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.prleft{
+    border: 3px solid #ededed;
+} 
+
+.prright{
+    border: 3px solid #00abf0;
+    position: relative;
+    left: 375px;
+}
+
+.contactpg{
+    background-color: #36454F;
+    padding: 25px 0px 25px 25px;
+}
+
+.contactpg h3{
+    padding-bottom: 15px;
+}
+
+.contactpg p{
+    padding-bottom: 5px;
+}
+
+.contactpg a{
+    text-decoration: none;
+    color: #ededed;
+    font-style: italic;
 }
 
 @media (max-width: 523px){
     .home-content h1{
         font-size:40px;
+        width: 250px;
     }
 
     .home-content h3{
@@ -194,13 +315,14 @@ body{
     .home-content p{
         font-size: 13px;
         padding-right: 40px;
+        width: 320px
     }
 
     .btn-box{
-        width: 10px;
+        width: 9px;
         height: 500%;
-        font-size: 10px;
-        padding-right: 30px;
+        font-size: 5px;
+        padding-right: 80px
     }
 
     .home-soi{
@@ -213,4 +335,50 @@ body{
         width: 50px;
         height: 50px;
     }
+
+    .skillbox{
+        grid-template-columns: repeat(1, 100px);
+        margin: 10px;
+        padding-bottom: 0px;
+    }
+
+    .skillbox div{
+        width: 280px;
+    }
+
+    .skillbox div h5{
+        padding-top: 19px;
+    }
+
+    .projectspg{
+        margin-bottom: 80px;
+    }
+
+    .projectsbox div h4{
+        font-size: 12px;
+    }
+
+    .projectsbox div p{
+        font-size: 10px;
+        padding-top: 5px;
+    }
+
+    .projectsbox div a{
+        font-size: 10px;
+    }
+
+    .projectsbox div{
+        margin: 20px 20px 10px 20px;
+        width: 280px;
+    }
+
+    .prright{
+        position: relative;
+        left: 0px;
+    }
+
+    .contactpg a,p{
+        font-size: 12px;
+    }
+
 }
