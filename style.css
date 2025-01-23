@@ -213,12 +213,12 @@ body{
 }
 
 .skillcol{
-    background-color: #ededed;
-    color: #00abf0;
+    background : linear-gradient(to bottom right,#62cff4,#2c67f2);
+    color: #ededed;
 }
 
 .skillcolo{
-    background-color: #ededed;
+    background: linear-gradient(to bottom right, #ffffff, #C9CAC9);
     color: #00abf0;
 }
 
