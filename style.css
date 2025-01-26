@@ -148,7 +148,7 @@ body{
 
 .home-soi{
     position: absolute;
-    margin-top: 480px;
+    margin-top: 420px;
     width: 230px;
     display: flex;
     justify-content: space-between;
@@ -179,8 +179,8 @@ body{
 
 .imgabs{
     width: 700px;
-    position: static;
-    margin-left: 300px;
+    position: absolute;
+    left: 800px;
 }
 
 .skillpg h3{
