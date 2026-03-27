@@ -104,9 +104,9 @@
                 <div class="flex-1 w-full">
                     <p class="text-accent font-bold tracking-widest uppercase mb-4 text-sm md:text-base">Pranav</p>
                     <h1 class="text-6xl md:text-[8rem] font-black leading-[0.85] tracking-tighter mb-6 uppercase">
-                        <span class="block">Design</span>
-                        <span class="block text-accent">Meets</span>
-                        <span class="block">Logic.</span>
+                        <span class="block">Create.</span>
+                        <span class="block text-accent">Code.</span>
+                        <span class="block">Evolve.</span>
                     </h1>
                     <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-lg border-l-2 border-accent pl-4">
                         A 3rd-year CSE student. Half designer, half developer, fully caffeinated. Building scalable web apps and designing intuitive interfaces.
@@ -117,21 +117,24 @@
                     </div>
                 </div>
                 
-                <div class="hidden md:flex flex-1 justify-center relative">
-                    <div class="w-80 h-96 rounded-3xl overflow-hidden glass-panel relative group">
-                        <div class="absolute inset-0 bg-[url('pranav.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6">
+                <div class="hidden md:flex flex-1 justify-center relative perspective-[1000px]">
+                    <div id="tilt-card" class="w-80 h-96 rounded-3xl overflow-hidden glass-panel relative group will-change-transform" style="transform-style: preserve-3d;">
+                        
+                        <div class="absolute inset-0 bg-[url('pranav.jpg')] bg-cover bg-center transition-all duration-300 group-hover:scale-110 grayscale group-hover:grayscale-0" style="transform: translateZ(20px);"></div>
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>  
+
+                        <div class="absolute bottom-6 left-6 right-6 transition-transform duration-300" style="transform: translateZ(40px);">
                             <div class="flex justify-between items-end">
-                                <div class="text-white font-bold">Designer & Dev</div>
-                                <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white">
+                                <div class="text-white font-bold tracking-wider drop-shadow-md">Designer & Dev</div>
+                                <a href="https://www.linkedin.com/in/pranav1906/" target="_blank">
+                                    <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white shadow-lg">    
                                     <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </div>
+                                </div></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 
 <section id="skills" class="py-24 px-6">
@@ -288,14 +291,14 @@
                 type: "National Hackathon Runner-Up",
                 desc: "An automated frontend evaluation system using pixel-based rendering. Secured 2nd place and a 10k cash prize, earning an internship offer from Amypo Technologies.", 
                 tags: ["Node.js", "Puppeteer", "Gemini API"], 
-                link: "https://github.com/pranav-1906" 
+                link: "https://github.com/pranav-1906/Amypo_PRISM" 
             },
             { 
                 title: "Agent Forge", 
                 type: "AI Platform",
                 desc: "A platform for building and running custom AI agents with dynamic input handling. Features persistent memory and knowledge base integration.", 
                 tags: ["Node.js", "MongoDB", "Ollama", "RAG"], 
-                link: "https://github.com/pranav-1906" 
+                link: "https://github.com/pranav-1906/Agent_Forge" 
             },
             { 
                 title: "FoodLink", 
@@ -317,6 +320,7 @@
             initTheme();
             renderProjects();
             initNavScroll();
+            initTiltEffect();
             document.getElementById('year').textContent = new Date().getFullYear();
         });
 
@@ -416,6 +420,41 @@
             // Trigger the native mail app
             window.location.href = `mailto:pranavsreekumar19@gmail.com?subject=${subject}&body=${body}`;
         }s
+
+// 3D Interactive Tilt Effect for Hero Image (Smooth & Subtle)
+        function initTiltEffect() {
+            const card = document.getElementById('tilt-card');
+            if (!card) return;
+
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Reduced the tilt from 15 degrees to a subtle 5 degrees
+                const rotateX = ((y - centerY) / centerY) * -5; 
+                const rotateY = ((x - centerX) / centerX) * 5;
+
+                // Added a 0.2s ease-out transition so it glides smoothly instead of snapping
+                card.style.transition = 'transform 0.2s ease-out';
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
+            });
+
+            // Even slower, more elegant snap back when the mouse leaves
+            card.addEventListener('mouseleave', () => {
+                card.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+            });
+
+            // Smooth entry
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'transform 0.3s ease-out';
+            });
+        }
     </script>
 </body>
 </html>
