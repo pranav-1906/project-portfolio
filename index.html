@@ -234,25 +234,23 @@
                         <p class="mb-4 text-[#e8bf6a]"><span class="text-[#cc7832]">const</span> <span class="text-[#9876aa]">visitor</span> = <span class="text-[#6a8759]">"Ready to collaborate"</span>;</p>
                         <p class="mb-6 text-[#808080]">// Run the executable below to send a message directly to my inbox.</p>
                         
-                        <form name="terminal-contact" method="POST" data-netlify="true" class="flex flex-col gap-4">
-                            <input type="hidden" name="form-name" value="terminal-contact" />
-
+                        <form onsubmit="sendMail(event)" class="flex flex-col gap-4">
                             <div class="flex items-center gap-3">
                                 <span class="text-[#27c93f]">➜</span>
                                 <span class="text-[#cc7832]">name:</span>
-                                <input type="text" name="name" class="flex-1 bg-transparent border-b border-gray-700 focus:border-[#27c93f] outline-none text-[#a9b7c6] py-1 transition-colors" required placeholder="_">
+                                <input type="text" id="sender-name" class="flex-1 bg-transparent border-b border-gray-700 focus:border-[#27c93f] outline-none text-[#a9b7c6] py-1 transition-colors" required placeholder="_">
                             </div>
                             
                             <div class="flex items-center gap-3">
                                 <span class="text-[#27c93f]">➜</span>
                                 <span class="text-[#cc7832]">email:</span>
-                                <input type="email" name="email" class="flex-1 bg-transparent border-b border-gray-700 focus:border-[#27c93f] outline-none text-[#a9b7c6] py-1 transition-colors" required placeholder="_">
+                                <input type="email" id="sender-email" class="flex-1 bg-transparent border-b border-gray-700 focus:border-[#27c93f] outline-none text-[#a9b7c6] py-1 transition-colors" required placeholder="_">
                             </div>
 
                             <div class="flex items-start gap-3 mt-2">
                                 <span class="text-[#27c93f] pt-2">➜</span>
                                 <span class="text-[#cc7832] pt-2">msg:</span>
-                                <textarea name="message" class="flex-1 bg-transparent border-b border-gray-700 focus:border-[#27c93f] outline-none text-[#a9b7c6] py-2 transition-colors resize-none" rows="3" required placeholder="Type your message here..."></textarea>
+                                <textarea id="sender-msg" class="flex-1 bg-transparent border-b border-gray-700 focus:border-[#27c93f] outline-none text-[#a9b7c6] py-2 transition-colors resize-none" rows="3" required placeholder="Type your message here..."></textarea>
                             </div>
 
                             <div class="mt-6 flex items-center gap-4">
@@ -401,6 +399,23 @@
                 lastScrollY = currentScrollY;
             }, { passive: true }); // 'passive' optimizes scroll performance
         }
+
+        // Terminal Mailto Logic
+        function sendMail(e) {
+            e.preventDefault(); // Prevents the page from reloading/404ing
+            
+            // Grab the values the user typed
+            const name = document.getElementById('sender-name').value;
+            const email = document.getElementById('sender-email').value;
+            const msg = document.getElementById('sender-msg').value;
+            
+            // Format the subject and body for the email client
+            const subject = encodeURIComponent(`${name}, Connecting through portfolio.`);
+            const body = encodeURIComponent(`Visitor Name: ${name}\nVisitor Email: ${email}\n\nMessage:\n${msg}`);
+            
+            // Trigger the native mail app
+            window.location.href = `mailto:pranavsreekumar19@gmail.com?subject=${subject}&body=${body}`;
+        }s
     </script>
 </body>
 </html>
