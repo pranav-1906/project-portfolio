@@ -39,4 +39,4 @@ No complex build steps required. To run this locally:
 
 3. Launch index.html in your browser or spin it up using VS Code Live Server.
 
-## Crafted with code and caffeine by Pranav.
+ > Crafted with code and caffeine by Pranav.
